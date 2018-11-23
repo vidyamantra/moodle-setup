@@ -154,3 +154,6 @@ systemctl start mysql
 
 # Create Database
 mysql -uroot -e "create database 'moodle'"
+
+#Define maximum allowed size of the client request body
+sed -i '28i client_max_body_size 128M;' /etc/nginx/nginx.conf
