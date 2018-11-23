@@ -145,7 +145,12 @@ sed -i 's/;opcache.enable_file_override=.*/opcache.enable_file_override=0/' /etc
 # Add to startup
 systemctl enable nginx
 systemctl enable php-fpm
+systemctl enable mysql
 
 # Start services
 systemctl start nginx
 systemctl start php-fpm
+systemctl start mysql
+
+# Create Database
+mysql -uroot -e "create database 'moodle'"
